@@ -13,6 +13,4 @@ public class MyFirstProgram {
     public static double distance(Point p1, Point p2){
         return Math.sqrt ((Math.pow((p2.x-p1.x), 2)) + (Math.pow((p2.y-p1.y), 2)) );
     }
-} public Point p1 (double x1,double y1){
-    this.x = x1;
-    this.y = y1;
+}
