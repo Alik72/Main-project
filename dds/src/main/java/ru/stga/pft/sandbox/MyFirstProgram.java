@@ -7,12 +7,11 @@ public class MyFirstProgram {
         hello("Архат");
         hello("Мир");
 
-        double l = 5;
-        System.out.println("Площадь квадрата со стороной " + l + "=" + area (l));
+        Sguare s = new Sguare(5);
+        System.out.println("Площадь квадрата со стороной " + s.l + "=" + area (s));
 
-        double a = 4;
-        double b = 2;
-        System.out.println("Площадь прямоугольника со сторонами " + a + " и " + b + " = " + area(a,b));
+        Rectangle r = new Rectangle (4,2);
+        System.out.println("Площадь прямоугольника со сторонами " + r.a + " и " + r.b + " = " + area(r));
 
         Points p1 = new Points(6,2);
         Points p2 = new Points(10,2);
@@ -26,10 +25,11 @@ public class MyFirstProgram {
 
         System.out.println("Hello," + somebady + "!!!");
     }
-    public static double area (double l){
-        return l*l;
+    public static double area (Sguare s){
+
+        return s.l*s.l;
     }
-    public static double area (double a, double b){
-        return a*b;
+    public static double area (Rectangle r)
+    {        return r.a*r.b;
     }
 }
