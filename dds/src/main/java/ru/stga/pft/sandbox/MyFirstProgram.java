@@ -3,6 +3,17 @@ package ru.stga.pft.sandbox;
 public class MyFirstProgram {
 
     public static void main(String[] args) {
+        hello("Марина");
+        hello("Архат");
+        hello("Мир");
+
+        double l = 5;
+        System.out.println("Площадь квадрата со стороной " + l + "=" + area (l));
+
+        double a = 4;
+        double b = 2;
+        System.out.println("Площадь прямоугольника со сторонами " + a + " и " + b + " = " + area(a,b));
+
         Points p1 = new Points(6,2);
         Points p2 = new Points(10,2);
 
@@ -10,5 +21,15 @@ public class MyFirstProgram {
     }
     public static double distance(Points p1, Points p2){
         return Math.sqrt ((Math.pow((p2.x-p1.x), 2)) + (Math.pow((p2.y-p1.y), 2)) );
+    }
+    public static void hello(String somebady) {
+
+        System.out.println("Hello," + somebady + "!!!");
+    }
+    public static double area (double l){
+        return l*l;
+    }
+    public static double area (double a, double b){
+        return a*b;
     }
 }
