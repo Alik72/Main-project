@@ -1,7 +1,8 @@
-package ru.stga.pft.sandbox;
+package ru.stga.pft.sandbox.tests;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import ru.stga.pft.sandbox.appmanager.ApplicationManager;
 
 /**
  * Created by Homosapiens on 29.02.2016.

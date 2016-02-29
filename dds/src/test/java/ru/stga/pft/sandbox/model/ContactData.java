@@ -1,4 +1,4 @@
-package ru.stga.pft.sandbox;
+package ru.stga.pft.sandbox.model;
 
 public class ContactData {
   private final String firstname;

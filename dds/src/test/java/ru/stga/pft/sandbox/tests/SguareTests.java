@@ -1,7 +1,8 @@
-package ru.stga.pft.sandbox;
+package ru.stga.pft.sandbox.tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import ru.stga.pft.sandbox.Sguare;
 
 /**
  * Created by Homosapiens on 26.02.2016.

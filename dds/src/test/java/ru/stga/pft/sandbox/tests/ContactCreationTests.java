@@ -1,7 +1,8 @@
-package ru.stga.pft.sandbox;
+package ru.stga.pft.sandbox.tests;
 
 
 import org.testng.annotations.Test;
+import ru.stga.pft.sandbox.model.ContactData;
 
 public class ContactCreationTests extends TestBase {
 
