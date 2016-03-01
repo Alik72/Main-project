@@ -5,6 +5,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.stga.pft.sandbox.model.ContactData;
 import ru.stga.pft.sandbox.model.GroupData;
 
+import static org.testng.Assert.assertTrue;
+
 /**
  * Created by Homosapiens on 01.03.2016.
  */
@@ -39,4 +41,19 @@ public class ContactHelper extends HelperBase {
   }
 
 
+  public void selectContact() {
+    click(By.name("selected[]"));
+  }
+
+  public void deleteSelectedContact() {
+    click(By.xpath("//input[@value='Delete']"));
+
+  }
+  public void closeWindowContact() {
+    closedWindows("^Delete 1 addresses[\\s\\S]$");
+  }
 }
+
+
+
+
