@@ -3,9 +3,6 @@ package ru.stga.pft.sandbox.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.stga.pft.sandbox.model.ContactData;
-import ru.stga.pft.sandbox.model.GroupData;
-
-import static org.testng.Assert.assertTrue;
 
 /**
  * Created by Homosapiens on 01.03.2016.
