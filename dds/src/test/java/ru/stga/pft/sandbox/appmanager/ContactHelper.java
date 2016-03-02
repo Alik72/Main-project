@@ -52,6 +52,14 @@ public class ContactHelper extends HelperBase {
   public void closeWindowContact() {
     closedWindows("^Delete 1 addresses[\\s\\S]$");
   }
+
+  public void initContactModification() {
+    click(By.xpath("//img[@alt='Edit']"));
+  }
+
+  public void submitContactModification() {
+    click(By.name("update"));
+  }
 }
 
 
