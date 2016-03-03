@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/addressbook-web-tests/addressbook-web-tests.iml" filepath="$PROJECT_DIR$/addressbook-web-tests/addressbook-web-tests.iml" />
       <module fileurl="file://$PROJECT_DIR$/dds/dds.iml" filepath="$PROJECT_DIR$/dds/dds.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rabota-proekt-klass/rabota-proekt-klass.iml" filepath="$PROJECT_DIR$/rabota-proekt-klass/rabota-proekt-klass.iml" />
     </modules>
   </component>
 </project>
