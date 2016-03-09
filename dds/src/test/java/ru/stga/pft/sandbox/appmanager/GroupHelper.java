@@ -2,6 +2,7 @@ package ru.stga.pft.sandbox.appmanager;
 
 import com.sun.javafx.binding.ExpressionHelperBase;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.stga.pft.sandbox.model.GroupData;
 
@@ -10,7 +11,7 @@ import ru.stga.pft.sandbox.model.GroupData;
  */
 public class GroupHelper extends HelperBase{
 
-  public GroupHelper(FirefoxDriver wd) {
+  public GroupHelper(WebDriver wd) {
     super(wd);
   }
 
