@@ -12,6 +12,8 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.*;
+import ru.stga.pft.sandbox.model.GroupData;
+
 import static org.openqa.selenium.OutputType.*;
 
 public class GroupDeletionTests extends TestBase {
@@ -20,6 +22,9 @@ public class GroupDeletionTests extends TestBase {
     public void testGroupDeletion() {
 
         app.getNavigationHelper().gotoGroupPage();
+        if(! app.getGroupHelper().isThereAGroup()){
+            app.getGroupHelper().createGroup(new GroupData("test1", null, null));
+        }
         app.getGroupHelper().selectGroup();
         app.getGroupHelper().deleteSelectedGroups();
         app.getGroupHelper().returnToGroupPage();

@@ -9,7 +9,7 @@ import ru.stga.pft.sandbox.model.GroupData;
 /**
  * Created by Homosapiens on 01.03.2016.
  */
-public class GroupHelper extends HelperBase{
+public class GroupHelper extends HelperBase {
 
   public GroupHelper(WebDriver wd) {
     super(wd);
@@ -47,5 +47,16 @@ public class GroupHelper extends HelperBase{
 
   public void submitGroupModification() {
     click(By.name("update"));
+  }
+
+  public void createGroup(GroupData group) {
+    initGroupCreation();
+    fillGroupForm(group);
+    submitGroupCreation();
+    returnToGroupPage();
+  }
+
+  public boolean isThereAGroup() {
+    return isElementPresent(By.name("selected[]"));
   }
 }
