@@ -31,9 +31,9 @@ public class HelperBase {
       }
     }
   }
-  private boolean isElementPresent(By by) {
+  private boolean isElementPresent(By locator) {
     try {
-      wd.findElement(by);
+      wd.findElement(locator);
       return true;
     } catch (NoSuchElementException e) {
       return false;
