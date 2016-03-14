@@ -27,22 +27,22 @@ public class ApplicationManager {
 
   public void init() {
 
-    if (browser.equals(BrowserType.FIREFOX)){
+    if (browser.equals(BrowserType.FIREFOX)) {
       wd = new FirefoxDriver();
-    }else if (browser.equals(BrowserType.CHROME)){
-      wd = new ChromeDriver();}
-    else if (browser.equals(BrowserType.IE)){
-      wd = new InternetExplorerDriver();}
-       wd.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+    } else if (browser.equals(BrowserType.CHROME)) {
+      wd = new ChromeDriver();
+    } else if (browser.equals(BrowserType.IE)) {
+      wd = new InternetExplorerDriver();
+    }
+    wd.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
     wd.get("http://localhost/addressbook/");
-
+    wd.manage().window().maximize();
     groupHelper = new GroupHelper(wd);
     navigationHelper = new NavigationHelper(wd);
     sessionHelper = new SessionHelper(wd);
     contactHelper = new ContactHelper(wd);
     sessionHelper.login("admin", "secret");
   }
-
 
 
   public void stop() {
@@ -52,9 +52,11 @@ public class ApplicationManager {
   public GroupHelper getGroupHelper() {
     return groupHelper;
   }
+
   public ContactHelper getContactHelper() {
     return contactHelper;
   }
+
   public NavigationHelper getNavigationHelper() {
     return navigationHelper;
   }
