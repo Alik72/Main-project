@@ -7,8 +7,8 @@ public class Collections {
   public static void main(String[] args) {
     String[] langs = {"JAVA", "C#", "Python", "PHP"};
 
-    for (int i = 0; i < langs.length; i++) {
-      System.out.println("Я хочу выучить язык программирования " + langs[i]);
+    for (String  l : langs) {
+      System.out.println("Я хочу выучить язык программирования " + l);
     }
   }
 }
