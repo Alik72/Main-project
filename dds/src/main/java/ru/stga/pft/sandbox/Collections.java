@@ -13,10 +13,10 @@ public class Collections {
   public static void main(String[] args) {
     String[] langs = {"JAVA", "C#", "Python", "PHP"};
 
-    List<String> languages = Arrays.asList("JAVA", "C#");
+    List<String> languages = Arrays.asList("JAVA", "C#", "Python");
 
-    for (String  l : languages) {
-      System.out.println("Я хочу выучить язык программирования " + l);
+    for (int i = 0; i<languages.size(); i++) {
+      System.out.println("Я хочу выучить язык программирования " + languages.get(i));
     }
   }
 }
