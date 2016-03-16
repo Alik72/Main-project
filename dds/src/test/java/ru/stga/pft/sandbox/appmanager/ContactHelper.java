@@ -2,10 +2,17 @@ package ru.stga.pft.sandbox.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stga.pft.sandbox.model.ContactData;
+
+import org.openqa.selenium.logging.Logs;
+import org.openqa.selenium.logging.LoggingPreferences;
+
+import java.net.URL;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Homosapiens on 01.03.2016.
@@ -45,8 +52,10 @@ public class ContactHelper extends HelperBase {
     }
   }
 
-  public void selectContact() {
-    click(By.name("selected[]"));
+  public void selectContact(int index) {
+
+    wd.findElements((By.name("selected[]"))).get(index).click();
+
   }
 
   public void deleteSelectedContact() {
@@ -74,6 +83,10 @@ public class ContactHelper extends HelperBase {
 
   public boolean isThereAContact() {
     return isElementPresent(By.name("selected[]"));
+  }
+
+  public int contactCount() {
+    return wd.findElements(By.name("selected[]")).size();
   }
 }
 
