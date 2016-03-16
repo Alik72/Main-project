@@ -4,6 +4,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.stga.pft.sandbox.model.GroupData;
 
+import java.util.List;
+
 /**
  * Created by Homosapiens on 01.03.2016.
  */
@@ -14,13 +16,13 @@ public class GroupModificationTests extends TestBase {
     if(! app.getGroupHelper().isThereAGroup()){
       app.getGroupHelper().createGroup(new GroupData("test1", null, null));
     }
-    int before = app.getGroupHelper().getGroupCount();
-    app.getGroupHelper().selectGroup(before - 1 );
+    List<GroupData> before = app.getGroupHelper().getGroupList();
+    app.getGroupHelper().selectGroup(before.size() - 1 );
     app.getGroupHelper().initGroupModification();
     app.getGroupHelper().fillGroupForm(new GroupData("proba11", "proba22", "proba33"));
     app.getGroupHelper().submitGroupModification();
     app.getGroupHelper().returnToGroupPage();
-    int after = app.getGroupHelper().getGroupCount();
-    Assert.assertEquals(after,before);
+    List<GroupData> after = app.getGroupHelper().getGroupList();
+    Assert.assertEquals(after.size(),before.size());
   }
 }

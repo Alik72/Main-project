@@ -1,16 +1,16 @@
 package ru.stga.pft.sandbox.model;
 
 public class ContactData {
-  private final String firstname;
   private final String lastname;
-  private final String homePhone;
+  private final String firstname;
+   private final String homePhone;
   private final String email;
   private final String address;
   private String group;
 
-  public ContactData(String firstname, String lastname, String homePhone, String email, String address, String group) {
-    this.firstname = firstname;
+  public ContactData(String lastname,String firstname, String homePhone, String email, String address, String group) {
     this.lastname = lastname;
+    this.firstname = firstname;
     this.homePhone = homePhone;
     this.email = email;
     this.address = address;
