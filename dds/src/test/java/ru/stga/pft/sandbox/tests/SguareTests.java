@@ -7,7 +7,7 @@ import ru.stga.pft.sandbox.Sguare;
 /**
  * Created by Homosapiens on 26.02.2016.
  */
-@Test
+@Test(enabled = false)
 
 public class SguareTests {
   public void testArea (){

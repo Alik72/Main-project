@@ -7,7 +7,7 @@ import ru.stga.pft.sandbox.Point;
 /**
  * Created by Homosapiens on 29.02.2016.
  */
-@Test
+@Test(enabled = false)
 public class PointTests {
   public void testDistance()
   {
