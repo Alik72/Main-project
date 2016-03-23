@@ -9,11 +9,11 @@ import ru.stga.pft.sandbox.model.GroupData;
 public class GroupModificationTests extends TestBase {
   @Test
   public void testGroupModification(){
-    app.getNavigationHelper().gotoGroupPage();
-    app.getGroupHelper().selectGroup();
-    app.getGroupHelper().initGroupModification();
-    app.getGroupHelper().fillGroupForm(new GroupData("proba11", "proba22", "proba33"));
-    app.getGroupHelper().submitGroupModification();
-    app.getGroupHelper().returnToGroupPage();
+    app.goTo().groupPage();
+    app.group().selectGroup();
+    app.group().initGroupModification();
+    app.group().fillGroupForm(new GroupData("proba11", "proba22", "proba33"));
+    app.group().submitGroupModification();
+    app.group().returnToGroupPage();
   }
 }
