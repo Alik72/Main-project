@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class ContactDeletionTests extends TestBase {
 
-  @Test(enabled = false)
+  @Test
   public void testContactDeletion() {
     app.goTo().gotoHomePage();
     if (!app.getContactHelper().isThereAContact()) {
@@ -23,5 +23,9 @@ public class ContactDeletionTests extends TestBase {
     app.getContactHelper().allertDeletionContact();
     List<ContactData> after = app.getContactHelper().getContactList();
     Assert.assertEquals(after.size(), before.size() - 1);
-  }
+
+    before.remove(before.size() - 1);
+    Assert.assertEquals(before,after);
+    }
+
 }
