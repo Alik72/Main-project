@@ -1,14 +1,9 @@
 package ru.stga.pft.sandbox.tests;
 
-import org.hamcrest.CoreMatchers;
-import org.hamcrest.MatcherAssert;
-import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stga.pft.sandbox.model.ContactData;
 import ru.stga.pft.sandbox.model.Contacts;
-
-import java.util.Set;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;

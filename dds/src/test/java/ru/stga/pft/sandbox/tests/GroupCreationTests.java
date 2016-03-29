@@ -1,18 +1,13 @@
 package ru.stga.pft.sandbox.tests;
 
 
-import org.hamcrest.MatcherAssert;
-import org.hamcrest.Matchers;
-import org.testng.Assert;
+
 import org.testng.annotations.Test;
 import ru.stga.pft.sandbox.model.GroupData;
 import ru.stga.pft.sandbox.model.Groups;
-
-import java.util.Set;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
-import static org.testng.Assert.assertEquals;
+
 
 public class GroupCreationTests extends TestBase {
 

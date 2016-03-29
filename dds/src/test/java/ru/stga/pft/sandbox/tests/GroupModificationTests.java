@@ -1,16 +1,10 @@
 package ru.stga.pft.sandbox.tests;
 
-import org.hamcrest.CoreMatchers;
-import org.hamcrest.Matcher;
-import org.hamcrest.MatcherAssert;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stga.pft.sandbox.model.GroupData;
 import ru.stga.pft.sandbox.model.Groups;
-
-import java.util.Set;
-
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
