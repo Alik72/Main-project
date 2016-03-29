@@ -12,13 +12,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class GroupCreationTests extends TestBase {
 
-  @BeforeMethod
-  public void ensurePrecondition () {
-    app.goTo().groupPage();
-    if (app.group().all().size() == 0 ) {
-      app.group().create(new GroupData().withName("test1"));
-    }
-  }
+
 
   @Test
   public void testGroupCreation() {
