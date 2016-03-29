@@ -1,31 +1,42 @@
 package ru.stga.pft.sandbox.tests;
 
+import org.hamcrest.CoreMatchers;
+import org.hamcrest.MatcherAssert;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stga.pft.sandbox.model.ContactData;
+import ru.stga.pft.sandbox.model.Contacts;
 
-import java.util.List;
+import java.util.Set;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.testng.Assert.assertEquals;
 
 /**
  * Created by Homosapiens on 01.03.2016.
  */
 public class ContactDeletionTests extends TestBase {
 
+  @BeforeMethod
+  public void ensurePrecondition(){
+    if (app.contact().all().size()==0){
+      app.contact().create(new ContactData().withFirstname("user1").withLastname("user2").withHomePhone("123456789").withEmail("user1.user2@mail.ru")
+              .withAddress("Москва").withGroup("test1"),true);
+    }
+  }
   @Test
   public void testContactDeletion() {
-    app.goTo().gotoHomePage();
-    if (!app.getContactHelper().isThereAContact()) {
-      app.getContactHelper().createContact(new ContactData("user1", "user2", "123456789", "user1.user2@mail.ru", "Москва", "test1"), true);
-    }
-    List<ContactData> before = app.getContactHelper().getContactList();
-    app.getContactHelper().selectContact(before.size() - 1);
-    app.getContactHelper().deleteSelectedContact();
-    app.getContactHelper().allertDeletionContact();
-    List<ContactData> after = app.getContactHelper().getContactList();
-    Assert.assertEquals(after.size(), before.size() - 1);
+    app.goTo().HomePage();
+    Contacts before = app.contact().all();
+    ContactData deletedContact = before.iterator().next();
+    app.contact().delete(deletedContact);
+    Contacts after = app.contact().all();
+    assertEquals(after.size(), before.size() - 1);
 
-    before.remove(before.size() - 1);
-    Assert.assertEquals(before,after);
+    assertThat(after, equalTo(before.without(deletedContact)));
     }
+
 
 }

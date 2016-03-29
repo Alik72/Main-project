@@ -1,33 +1,13 @@
 package ru.stga.pft.sandbox.model;
 
 public class ContactData {
-  private int id;
-  private final String lastname;
-  private final String firstname;
-  private final String homePhone;
-  private final String email;
-  private final String address;
+  private int id = Integer.MAX_VALUE;;
+  private  String lastname;
+  private  String firstname;
+  private  String homePhone;
+  private  String email;
+  private  String address;
   private String group;
-
-  public ContactData(String lastname, String firstname, String homePhone, String email, String address, String group) {
-    this.id = Integer.MAX_VALUE;
-    this.lastname = lastname;
-    this.firstname = firstname;
-    this.homePhone = homePhone;
-    this.email = email;
-    this.address = address;
-    this.group = group;
-  }
-
-  public ContactData(int id,String lastname, String firstname, String homePhone, String email, String address, String group) {
-    this.id = id;
-    this.lastname = lastname;
-    this.firstname = firstname;
-    this.homePhone = homePhone;
-    this.email = email;
-    this.address = address;
-    this.group = group;
-  }
 
   public int getId() {
     return id;
@@ -57,8 +37,39 @@ public class ContactData {
     return group;
   }
 
-  public void setId(int id) {
+  public ContactData withId(int id) {
     this.id = id;
+    return this;
+  }
+
+  public ContactData withLastname(String lastname) {
+    this.lastname = lastname;
+    return this;
+  }
+
+  public ContactData withFirstname(String firstname) {
+    this.firstname = firstname;
+    return this;
+  }
+
+  public ContactData withHomePhone(String homePhone) {
+    this.homePhone = homePhone;
+    return this;
+  }
+
+  public ContactData withEmail(String email) {
+    this.email = email;
+    return this;
+  }
+
+  public ContactData withAddress(String address) {
+    this.address = address;
+    return this;
+  }
+
+  public ContactData withGroup(String group) {
+    this.group = group;
+    return this;
   }
 
   @Override
@@ -68,6 +79,7 @@ public class ContactData {
 
     ContactData that = (ContactData) o;
 
+    if (id != that.id) return false;
     if (lastname != null ? !lastname.equals(that.lastname) : that.lastname != null) return false;
     return firstname != null ? firstname.equals(that.firstname) : that.firstname == null;
 
@@ -75,12 +87,14 @@ public class ContactData {
 
   @Override
   public int hashCode() {
-    int result = lastname != null ? lastname.hashCode() : 0;
+    int result = id;
+    result = 31 * result + (lastname != null ? lastname.hashCode() : 0);
     result = 31 * result + (firstname != null ? firstname.hashCode() : 0);
     return result;
   }
 
   @Override
+
   public String toString() {
     return "ContactData{" +
             "id='" + id + '\'' +

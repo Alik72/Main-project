@@ -1,31 +1,28 @@
 package ru.stga.pft.sandbox.tests;
 
 
-import org.openqa.selenium.By;
-import org.testng.Assert;
+
 import org.testng.annotations.Test;
 import ru.stga.pft.sandbox.model.ContactData;
-
-import java.util.Comparator;
-import java.util.HashSet;
-import java.util.List;
+import ru.stga.pft.sandbox.model.Contacts;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class ContactCreationTests extends TestBase {
 
   @Test
   public void testFormCreation() {
 
-    app.goTo().gotoHomePage();
-    List<ContactData> before = app.getContactHelper().getContactList();
-    ContactData contact = new ContactData("user1", "user2", "123456789", "user1.user2@mail.ru", "Москва", "test1");
-    app.getContactHelper().createContact(contact, true);
-    List<ContactData> after = app.getContactHelper().getContactList();
-    Assert.assertEquals(after.size(), before.size() + 1);
+    app.goTo().HomePage();
+    Contacts before = app.contact().all();
+    ContactData contact = new ContactData()
+            .withFirstname("user1").withLastname("user2").withHomePhone("123456789").withEmail("user1.user2@mail.ru")
+            .withAddress("Москва").withGroup("test1");
+    app.contact().create(contact, true);
+    Contacts after = app.contact().all();
+    assertThat(after.size(), equalTo (before.size() + 1));
 
-    before.add(contact);
-    Comparator<? super ContactData> byId = (c1, c2) -> Integer.compare(c1.getId(), c2.getId());
-    before.sort(byId);
-    after.sort(byId);
-    Assert.assertEquals(before, after);
+    assertThat(after, equalTo(
+            before.withAdded(contact.withId(after.stream().mapToInt((c)->c.getId()).max().getAsInt()))) );
   }
 }
