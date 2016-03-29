@@ -10,6 +10,11 @@ public class ContactData {
   private  String homePhone;
   private String mobilePhone;
   private String workPhone;
+  private String allPhones;
+
+  public String getAllPhones() {
+    return allPhones;
+  }
 
   public int getId() {
     return id;
@@ -44,6 +49,10 @@ public class ContactData {
   }
   public String getWorkPhone() {
     return workPhone;
+  }
+  public ContactData withAllPhones(String allPhones) {
+    this.allPhones = allPhones;
+    return this;
   }
   public ContactData withWorkPhone(String workPhone) {
     this.workPhone = workPhone;
