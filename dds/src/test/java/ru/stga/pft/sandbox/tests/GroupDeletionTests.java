@@ -9,6 +9,7 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.testng.Assert.assertEquals;
 
 public class GroupDeletionTests extends TestBase {
+
     @BeforeMethod
     public void ensurePrecondition () {
         app.goTo().groupPage();

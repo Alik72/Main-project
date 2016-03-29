@@ -4,10 +4,12 @@ public class ContactData {
   private int id = Integer.MAX_VALUE;;
   private  String lastname;
   private  String firstname;
-  private  String homePhone;
   private  String email;
   private  String address;
   private String group;
+  private  String homePhone;
+  private String mobilePhone;
+  private String workPhone;
 
   public int getId() {
     return id;
@@ -19,10 +21,6 @@ public class ContactData {
 
   public String getLastname() {
     return lastname;
-  }
-
-  public String getHomePhone() {
-    return homePhone;
   }
 
   public String getEmail() {
@@ -37,6 +35,24 @@ public class ContactData {
     return group;
   }
 
+  public String getHomePhone() {
+    return homePhone;
+  }
+
+  public String getMobilePhone() {
+    return mobilePhone;
+  }
+  public String getWorkPhone() {
+    return workPhone;
+  }
+  public ContactData withWorkPhone(String workPhone) {
+    this.workPhone = workPhone;
+    return this;
+  }
+  public ContactData withMobilePhone(String mobilePhone) {
+    this.mobilePhone = mobilePhone;
+    return this;
+  }
   public ContactData withId(int id) {
     this.id = id;
     return this;
@@ -102,6 +118,9 @@ public class ContactData {
             ", firstname='" + firstname + '\'' +
             '}';
   }
+
+
+
 }
 
 
