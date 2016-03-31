@@ -1,5 +1,7 @@
 package ru.stga.pft.sandbox.model;
 
+import java.io.File;
+
 public class ContactData {
   private int id = Integer.MAX_VALUE;;
   private  String lastname;
@@ -11,7 +13,11 @@ public class ContactData {
   private String mobilePhone;
   private String workPhone;
   private String allPhones;
+  private File photo;
 
+   public File getPhoto() {
+    return photo;
+  }
   public String getAllPhones() {
     return allPhones;
   }
@@ -49,6 +55,11 @@ public class ContactData {
   }
   public String getWorkPhone() {
     return workPhone;
+  }
+
+  public ContactData withPhoto(File photo) {
+    this.photo = photo;
+    return this;
   }
   public ContactData withAllPhones(String allPhones) {
     this.allPhones = allPhones;
