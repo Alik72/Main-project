@@ -1,8 +1,14 @@
 package ru.stga.pft.sandbox.model;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamOmitField;
+
 import java.io.File;
 
+@XStreamAlias("contact")
+
 public class ContactData {
+  @XStreamOmitField
   private int id = Integer.MAX_VALUE;;
   private  String lastname;
   private  String firstname;

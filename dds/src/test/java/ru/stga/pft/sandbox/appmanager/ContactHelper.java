@@ -36,7 +36,7 @@ public class ContactHelper extends HelperBase {
     click(By.xpath("//div[@id='content']/form/input[21]"));
   }
 
-  public void fillContactForm(ContactData contactData, boolean creation) {
+  public void fillContactForm(ContactData contactData) {
     type(By.name("firstname"), contactData.getFirstname());
     type(By.name("lastname"), contactData.getLastname());
     type(By.name("home"), contactData.getHomePhone());
@@ -44,12 +44,6 @@ public class ContactHelper extends HelperBase {
     type(By.name("address2"), contactData.getAddress());
     attach(By.name("photo"), contactData.getPhoto());
 
-    if (creation) {
-      new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
-    } else {
-      Assert.assertFalse(isElementPresent(By.name("new_group")));
-
-    }
   }
 
   public void selectContactById(int id) {
@@ -74,16 +68,16 @@ public class ContactHelper extends HelperBase {
     wd.switchTo().alert().accept();
   }
 
-  public void create(ContactData contact, boolean b) {
+  public void create(ContactData contact) {
     initContactCreation();
-    fillContactForm(contact,b);
+    fillContactForm(contact);
     submitContactCreation();
     contactCache = null;
   }
   public void modify ( ContactData contact) {
     selectContactById(contact.getId());
     initContactModification();
-    fillContactForm(contact,false);
+    fillContactForm(contact);
     submitContactModification();
     contactCache = null;
   }
