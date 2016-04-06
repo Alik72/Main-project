@@ -1,5 +1,6 @@
 package ru.stga.pft.sandbox.model;
 
+import com.google.gson.annotations.Expose;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
 
@@ -10,9 +11,12 @@ import java.io.File;
 public class ContactData {
   @XStreamOmitField
   private int id = Integer.MAX_VALUE;;
+  @Expose
   private  String lastname;
+  @Expose
   private  String firstname;
-  private  String email;
+   private  String email;
+  @Expose
   private  String address;
   private String group;
   private  String homePhone;
