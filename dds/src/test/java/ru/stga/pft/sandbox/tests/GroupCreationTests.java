@@ -4,14 +4,15 @@ package ru.stga.pft.sandbox.tests;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.thoughtworks.xstream.XStream;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import ru.stga.pft.sandbox.model.GroupData;
 import ru.stga.pft.sandbox.model.Groups;
 
-import java.io.*;
-import java.util.ArrayList;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -19,8 +20,8 @@ import java.util.stream.Collectors;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
-
 public class GroupCreationTests extends TestBase {
+
 
   @DataProvider
 
@@ -68,7 +69,7 @@ public class GroupCreationTests extends TestBase {
 
   }
 
-  @Test(enabled = false)
+  @Test()
   public void testBadGroupCreation() {
     app.goTo().groupPage();
     Groups before = app.group().all();
