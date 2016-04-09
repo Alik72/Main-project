@@ -3,31 +3,52 @@ package ru.stga.pft.sandbox.model;
 import com.google.gson.annotations.Expose;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
+import org.hibernate.annotations.Type;
 
+import javax.persistence.*;
 import java.io.File;
 
 @XStreamAlias("contact")
 
+@Entity
+@Table(name="addressbook")
 public class ContactData {
   @XStreamOmitField
+  @Id
+  @Column(name="id")
   private int id = Integer.MAX_VALUE;;
   @Expose
+  @Column(name="lastname")
   private  String lastname;
   @Expose
+  @Column(name="firstname")
   private  String firstname;
-   private  String email;
+  @Column(name="email")
+  @Type(type = "text")
+  private  String email;
   @Expose
+  @Column(name="address")
+  @Type(type = "text")
   private  String address;
+  @Transient
   private String group;
+  @Column(name="home")
+  @Type(type = "text")
   private  String homePhone;
+  @Column(name="mobile")
+  @Type(type = "text")
   private String mobilePhone;
+  @Column(name="work")
+  @Type(type = "text")
   private String workPhone;
+  @Transient
   private String allPhones;
-  private File photo;
+  @Column(name="photo")
+  @Type(type = "text")
+  private String photo;
 
-   public File getPhoto() {
-    return photo;
-  }
+   public File getPhoto() {return new File(photo) ;}
+
   public String getAllPhones() {
     return allPhones;
   }
@@ -68,7 +89,7 @@ public class ContactData {
   }
 
   public ContactData withPhoto(File photo) {
-    this.photo = photo;
+    this.photo = photo.getPath();
     return this;
   }
   public ContactData withAllPhones(String allPhones) {
@@ -140,15 +161,13 @@ public class ContactData {
   }
 
   @Override
-
   public String toString() {
     return "ContactData{" +
-            "id='" + id + '\'' +
+            "id=" + id +
             ", lastname='" + lastname + '\'' +
             ", firstname='" + firstname + '\'' +
             '}';
   }
-
 
 
 }
