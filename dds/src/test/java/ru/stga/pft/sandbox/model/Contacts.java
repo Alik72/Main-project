@@ -2,6 +2,7 @@ package ru.stga.pft.sandbox.model;
 
 import com.google.common.collect.ForwardingSet;
 
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -18,6 +19,10 @@ private Set<ContactData> delegate;
 
   public Contacts() {
     this.delegate = new HashSet<>();
+  }
+
+  public Contacts(Collection<ContactData> contacts) {
+    this.delegate = new HashSet<ContactData>(contacts);
   }
 
   @Override
