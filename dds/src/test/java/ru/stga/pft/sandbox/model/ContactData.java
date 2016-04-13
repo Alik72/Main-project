@@ -6,7 +6,6 @@ import com.thoughtworks.xstream.annotations.XStreamOmitField;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
-import java.io.File;
 
 @XStreamAlias("contact")
 
@@ -43,11 +42,11 @@ public class ContactData {
   private String workPhone;
   @Transient
   private String allPhones;
-  @Column(name="photo")
-  @Type(type = "text")
-  private String photo;
+ // @Column(name="photo")
+ // @Type(type = "text")
+ // private String photo;
 
-   public File getPhoto() {return new File(photo) ;}
+  // public File getPhoto() {return new File(photo) ;}
 
   public String getAllPhones() {
     return allPhones;
@@ -88,10 +87,10 @@ public class ContactData {
     return workPhone;
   }
 
-  public ContactData withPhoto(File photo) {
-    this.photo = photo.getPath();
-    return this;
-  }
+  //public ContactData withPhoto(File photo) {
+  //  this.photo = photo.getPath();
+  //  return this;
+  //}
   public ContactData withAllPhones(String allPhones) {
     this.allPhones = allPhones;
     return this;
@@ -137,6 +136,18 @@ public class ContactData {
   public ContactData withGroup(String group) {
     this.group = group;
     return this;
+  }
+
+  public void setId(int id) {
+    this.id = id;
+  }
+
+  public void setLastname(String lastname) {
+    this.lastname = lastname;
+  }
+
+  public void setFirstname(String firstname) {
+    this.firstname = firstname;
   }
 
   @Override

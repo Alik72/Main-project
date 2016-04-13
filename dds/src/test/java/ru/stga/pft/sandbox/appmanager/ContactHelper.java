@@ -3,14 +3,10 @@ package ru.stga.pft.sandbox.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 import ru.stga.pft.sandbox.model.ContactData;
 import ru.stga.pft.sandbox.model.Contacts;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 
 /**
@@ -39,10 +35,10 @@ public class ContactHelper extends HelperBase {
   public void fillContactForm(ContactData contactData) {
     type(By.name("firstname"), contactData.getFirstname());
     type(By.name("lastname"), contactData.getLastname());
-    type(By.name("home"), contactData.getHomePhone());
-    type(By.name("email"), contactData.getEmail());
-    type(By.name("address2"), contactData.getAddress());
-    attach(By.name("photo"), contactData.getPhoto());
+    //type(By.name("home"), contactData.getHomePhone());
+    //type(By.name("email"), contactData.getEmail());
+    //type(By.name("address2"), contactData.getAddress());
+   // attach(By.name("photo"), contactData.getPhoto());
 
   }
 
