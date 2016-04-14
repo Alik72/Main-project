@@ -1,17 +1,14 @@
 [
   {
     "lastname": "user 0",
-    "firstname": "user 0",
-    "address": "Moskva 0"
+    "firstname": "user 0"
   },
   {
     "lastname": "user 1",
-    "firstname": "user 1",
-    "address": "Moskva 1"
+    "firstname": "user 1"
   },
   {
     "lastname": "user 2",
-    "firstname": "user 2",
-    "address": "Moskva 2"
+    "firstname": "user 2"
   }
 ]

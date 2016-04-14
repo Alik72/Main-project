@@ -11,3 +11,4 @@ gradle-app.setting
 .gradletasknamecache
 .idea/workspace.xml
 dds/src/test/java/ru/stga/pft/sandbox/appmanager/ApplicationManager.java
+*.log
