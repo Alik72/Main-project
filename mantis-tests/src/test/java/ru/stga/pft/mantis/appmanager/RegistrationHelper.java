@@ -24,4 +24,14 @@ public class RegistrationHelper extends HelperBase {
     type(By.name("password_confirm"),password);
     click(By.cssSelector("input[value='Update User']"));
   }
+
+  public void repPassword(String username, String password) {
+    wd.get(app.getProperty ("web.baseUrl") + "login_page.php");
+    type(By.name("username"),username);
+    type(By.name("password"),password);
+    click(By.cssSelector("input[value='Login']"));
+    click(By.linkText("Manage Users"));
+    click(By.linkText("user8"));
+    click(By.cssSelector("input[value='Reset Password']"));
+  }
 }
