@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/addressbook-web-tests/addressbook-web-tests.iml" filepath="$PROJECT_DIR$/addressbook-web-tests/addressbook-web-tests.iml" />
       <module fileurl="file://$PROJECT_DIR$/dds/dds.iml" filepath="$PROJECT_DIR$/dds/dds.iml" />
       <module fileurl="file://$PROJECT_DIR$/mantis-tests/mantis-tests.iml" filepath="$PROJECT_DIR$/mantis-tests/mantis-tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/proba-mantis/proba-mantis.iml" filepath="$PROJECT_DIR$/proba-mantis/proba-mantis.iml" />
       <module fileurl="file://$PROJECT_DIR$/rabota-proekt-klass/rabota-proekt-klass.iml" filepath="$PROJECT_DIR$/rabota-proekt-klass/rabota-proekt-klass.iml" />
       <module fileurl="file://$PROJECT_DIR$/soap-sample/soap-sample.iml" filepath="$PROJECT_DIR$/soap-sample/soap-sample.iml" />
     </modules>
